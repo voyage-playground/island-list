@@ -1,4 +1,6 @@
-FROM python:3.8-slim-buster
+FROM jwilder/dockerize as dockerize
+
+FROM python:3.8-alpine
 
 ENV FLASK_ENV=development
 
@@ -9,4 +11,6 @@ RUN pip3 install -r requirements.txt
 
 COPY . .
 
-CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
+COPY --from=dockerize /usr/local/bin/dockerize /usr/local/bin/dockerize
+
+CMD [ "sh", "./scripts/run_app.sh"]

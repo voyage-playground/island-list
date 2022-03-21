@@ -1,0 +1,12 @@
+services:
+  app:
+    context: ./
+    primary: true
+    exposePort: 5000
+    environment:
+      - name: APP_ENV
+        value: voyage
+      - name: DB_HOST
+        value: "127.0.0.1"
+  database:
+    image: voyageapp/postgres:14.2
