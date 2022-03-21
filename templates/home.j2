@@ -2,18 +2,17 @@
 
 {% block body %}
 <div class="p-8 max-w-7xl mx-auto h-full">
-  <div class="mt-4 p-8 bg-contain bg-no-repeat bg-right flex shadow-lg h-64 overflow-hidden rounded-xl bg-gradient-to-r from-rose-50 to-sky-200">
+  <div class="mt-4 p-8 bg-contain bg-no-repeat bg-right flex shadow-lg h-80 overflow-hidden rounded-xl bg-gradient-to-l from-cyan-500 to-blue-500">
     <div class="flex-1 text-zinc-700 flex items-center">
-      <div>
-        <h1 class="font-light text-5xl">Live on an <span class="font-semibold">Island</span></h1>
-        <p>Browse our catalog of wonderful islands for sale.</p>
+      <div class="flex-1">
+        <img class="w-full" src="{{url_for('static', filename='logo.svg')}}"></img>
       </div>
     </div>
-    <div class="w-64">
-      <img src="{{url_for('static', filename='island_banner.svg')}}"></img>
+    <div class="flex-1">
+      <img class="w-full" src="{{url_for('static', filename='island_banner.svg')}}"></img>
     </div>
   </div>
-  <div class="mt-16 grid grid-cols-3 gap-4">
+  <div class="mt-16 grid grid-cols-3 gap-8">
     {% if islands|length > 0 %}
       {% for island in islands %}
         {% include 'card.j2' %} 

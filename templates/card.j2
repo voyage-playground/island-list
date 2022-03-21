@@ -1,15 +1,17 @@
-<div class="bg-indigo-50 rounded-2xl shadow overflow-hidden">
+<div class="bg-indigo-50 rounded-2xl shadow-lg overflow-hidden flex flex-col mb-8">
   <div
-    class="bg-cover bg-center h-48"
+    class="bg-cover bg-top h-48"
     style="background-image: url({{ url_for('static', filename='islands/' + island.id|string + '.svg')}});"
   ></div>
-  <div class="p-4 bg-white">
+  <div class="p-4 bg-white flex-1 flex flex-col">
     <h3 class="text-xl font-bold mb-4">{{ island.name }}</h3>
-    <p>{{ island.description }}</p>
-    <button
-      class="inline-flex items-center px-4 py-2 bg-gray-900 border border-transparent rounded-md font-semibold text-xs text-white uppercase"
-    >
-      View Details
-    </button>
+    <p class="grow mb-4">{{ island.description }}</p>
+    <div>
+      <button
+        class="inline-flex items-center px-4 py-2 bg-cyan-700 border border-transparent rounded-md font-semibold text-lg text-white uppercase"
+      >
+        View Details
+      </button>
+    </div>
   </div>
 </div>
