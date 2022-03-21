@@ -1,10 +1,11 @@
 <div class="bg-indigo-50 rounded-2xl shadow overflow-hidden">
   <div
     class="bg-cover bg-center h-48"
-    style="background-image: url({{ url_for('static', filename=island + '.svg')}});"
+    style="background-image: url({{ url_for('static', filename='islands/' + island.id|string + '.svg')}});"
   ></div>
   <div class="p-4 bg-white">
-    <h3 class="text-xl font-bold mb-4">Awesome Pacific Island</h3>
+    <h3 class="text-xl font-bold mb-4">{{ island.name }}</h3>
+    <p>{{ island.description }}</p>
     <button
       class="inline-flex items-center px-4 py-2 bg-gray-900 border border-transparent rounded-md font-semibold text-xs text-white uppercase"
     >
