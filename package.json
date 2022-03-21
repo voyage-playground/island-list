@@ -4,6 +4,7 @@
   "description": "<p align=\"center\">   <a href=\"https://github.com/voyage-playground/island-list\"><img src=\"./static/logo.svg\" width=\"200\" alt=\"Logo\"></a> </p>",
   "main": "index.js",
   "scripts": {
+    "css": "npx tailwindcss -i ./static/css/style.css -o ./static/dist/main.css",
     "css:watch": "npx tailwindcss -i ./static/css/style.css -o ./static/dist/main.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
