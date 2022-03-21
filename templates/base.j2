@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Island Finder</title>
+    <title>Island List | Only the Best Islands</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Magra:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,6 +14,9 @@
     </style>
   </head>
   <body>
-    {% block body %} {% endblock %}
+    <div class="p-8 max-w-7xl mx-auto h-full">
+      {% include 'header.j2' %} 
+      {% block body %} {% endblock %}
+    </div>
   </body>
 </html>

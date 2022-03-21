@@ -1,23 +1,18 @@
 {% extends 'base.j2' %} 
 
 {% block body %}
-<div class="p-8 max-w-7xl mx-auto h-full">
-  <div class="mt-4 p-8 bg-contain bg-no-repeat bg-right flex shadow-lg h-80 overflow-hidden rounded-xl bg-gradient-to-l from-cyan-500 to-blue-500">
-    <div class="flex-1 text-zinc-700 flex items-center">
-      <div class="flex-1">
-        <img class="w-full" src="{{url_for('static', filename='logo.svg')}}"></img>
-      </div>
-    </div>
-    <div class="flex-1">
-      <img class="w-full" src="{{url_for('static', filename='island_banner.svg')}}"></img>
-    </div>
+<div class="mt-16 grid grid-cols-2 gap-8">
+  <div>
+    <button class="shadow-md inline-flex items-center px-6 py-4 bg-white border border-gray-100 rounded-md font-semibold text-2xl text-cyan-500 uppercase">
+      List an Island
+    </button>
   </div>
-  <div class="mt-16 grid grid-cols-3 gap-8">
-    {% if islands|length > 0 %}
-      {% for island in islands %}
-        {% include 'card.j2' %} 
-      {% endfor %} 
-    {% endif %}
-  </div>
+</div>
+<div class="mt-16 grid grid-cols-3 gap-8">
+  {% if islands|length > 0 %}
+    {% for island in islands %}
+      {% include 'card.j2' %} 
+    {% endfor %} 
+  {% endif %}
 </div>
 {% endblock %}

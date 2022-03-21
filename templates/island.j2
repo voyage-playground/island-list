@@ -1,0 +1,15 @@
+{% extends 'base.j2' %} 
+
+{% block body %}
+<div class="mt-16 grid grid-cols-2 gap-8">
+  <div>
+    <img class="w-full" src="{{url_for('static', filename='islands/' + island.id|string + '.svg')}}"></img>
+  </div>
+  <div>
+    <h3 class="text-xl font-bold mb-4">{{ island.name }}</h3>
+    <p class="mb-4">{{ island.description }}</p>
+    <h3 class="text-xl font-bold">Location</h3>
+    <p class="mb-4">{{ island.location }}</p>
+  </div>
+</div>
+{% endblock %}
