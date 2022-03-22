@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 
-COPY static ./static
+COPY . .
 
 RUN npm run css
 
