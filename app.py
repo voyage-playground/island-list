@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -22,15 +22,31 @@ class Island(db.Model):
         self.slug = slug
         self.description = description
         self.location = location
+class Offer(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    island_id = db.Column(db.Integer, db.ForeignKey('island.id'), nullable=False)
+    offer = db.Column(db.Integer, nullable=False)
+
+    def __init__(self, island_id, offer):
+        self.island_id = island_id
+        self.offer = offer
 
 @app.route("/")
 def home():
     islands = Island.query.all()
     return render_template('home.j2', islands=islands)
 
-@app.route("/islands/<string:slug>")
+@app.route("/islands/<string:slug>", methods=['GET'])
 def get_island(slug):
     island = Island.query.filter_by(slug=slug).first()
+    return render_template('island.j2', island=island)
+
+@app.route("/islands/<string:slug>", methods=['POST'])
+def add_offer(slug):
+    island = Island.query.filter_by(slug=slug).first()
+    offer = Offer(island_id=island.id,offer=request.form['offer'])
+    db.session.add(offer)
+    db.session.commit()
     return render_template('island.j2', island=island)
 
 @app.cli.command('rollback')
