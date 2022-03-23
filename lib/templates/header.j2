@@ -1,13 +1,13 @@
-<div class="mt-4 p-8 bg-contain bg-no-repeat bg-right flex shadow-lg h-96 overflow-hidden rounded-xl bg-gradient-to-l from-cyan-500 via-cyan-300 to-cyan-600">
+<div class="mt-4 p-8 bg-contain bg-no-repeat bg-right sm:flex shadow-lg sm:h-96 overflow-hidden rounded-xl bg-gradient-to-l from-cyan-500 via-cyan-300 to-cyan-600">
   <div class="flex-1 text-zinc-700 flex items-center">
     <div class="flex-1 mr-16">
       <a href="/">
         <img class="w-full max-w-md" src="{{url_for('static', filename='logo.svg')}}"></img>
       </a>
-      <p class="mt-4 text-white">We have sourced some of the most luxurious and wonderful islands for sale. What better way to live out our last days then on an island!</p>
+      <p class="mt-4 text-white hidden sm:block">We have sourced some of the most luxurious and wonderful islands for sale. What better way to live out our last days then on an island!</p>
     </div>
   </div>
-  <div class="flex-1">
+  <div class="flex-1 hidden sm:block">
     <img class="w-full" src="{{url_for('static', filename='island_banner.svg')}}"></img>
   </div>
 </div>

@@ -19,4 +19,6 @@ COPY . .
 COPY --from=node /usr/local/bin/dockerize /usr/local/bin/dockerize
 COPY --from=node /app/lib/static/dist ./lib/static/dist
 
+ENV FLASK_ENV=development
+
 CMD dockerize -wait "tcp://$DB_HOST:5432" -timeout 60s ; python3 app.py
