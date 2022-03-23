@@ -7,7 +7,7 @@
     <h3 class="text-xl font-bold mb-4">{{ island.name }}</h3>
     <p class="grow mb-4">{{ island.description }}</p>
     <div>
-      <a href="{{url_for('get_island', slug=island.slug)}}">
+      <a href="{{url_for('routes.get_island', slug=island.slug)}}">
         <button
           class="inline-flex items-center px-4 py-2 bg-cyan-700 border border-transparent rounded-md font-semibold text-lg text-white uppercase"
         >
