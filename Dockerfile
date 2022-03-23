@@ -17,6 +17,6 @@ RUN pip3 install -r requirements.txt
 COPY . .
 
 COPY --from=node /usr/local/bin/dockerize /usr/local/bin/dockerize
-COPY --from=node /app ./
+COPY --from=node /app/lib/static/dist ./lib/static/dist
 
 CMD dockerize -wait "tcp://$DB_HOST:5432" -timeout 60s ; python3 app.py
