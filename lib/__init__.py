@@ -1,7 +1,6 @@
 import os
 from flask import Flask
 from lib.routes import routes
-from lib.commands import commands
 
 def create_app(db):
     app = Flask(__name__)
@@ -13,5 +12,4 @@ def create_app(db):
     db.init_app(app)
 
     app.register_blueprint(routes)
-    app.register_blueprint(commands)
     return app

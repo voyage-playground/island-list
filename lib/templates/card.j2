@@ -1,4 +1,4 @@
-<div class="bg-indigo-50 rounded-2xl shadow-lg overflow-hidden flex flex-col mb-8">
+<div class="bg-cyan-300 rounded-2xl shadow-lg overflow-hidden flex flex-col mb-8">
   <div
     class="bg-cover bg-top h-48"
     style="background-image: url({{ url_for('static', filename='islands/' + island.id|string + '.svg')}});"
@@ -9,7 +9,7 @@
     <div>
       <a href="{{url_for('routes.get_island', slug=island.slug)}}">
         <button
-          class="inline-flex items-center px-4 py-2 bg-cyan-700 border border-transparent rounded-md font-semibold text-lg text-white uppercase"
+          class="inline-flex items-center px-4 py-2 bg-cyan-600 border border-transparent rounded-md font-semibold text-lg text-white uppercase"
         >
           View Details
         </button>

@@ -11,8 +11,6 @@ RUN npm run css
 
 FROM python:3.8-alpine
 
-ENV FLASK_ENV=development
-
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
@@ -23,4 +21,4 @@ COPY . .
 COPY --from=dockerize /usr/local/bin/dockerize /usr/local/bin/dockerize
 COPY --from=node /app ./
 
-CMD [ "sh", "./scripts/run_app.sh"]
+CMD dockerize -wait "tcp://$DB_HOST:5432" -timeout 60s ; python3 app.py
