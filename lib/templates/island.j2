@@ -1,7 +1,7 @@
 {% extends 'base.j2' %} 
 
 {% block body %}
-<div class="mt-16 grid grid-cols-2 gap-8">
+<div class="mt-16 grid sm:grid-cols-1 md:grid-cols-2 gap-8">
   <div>
     <img class="w-full" src="{{url_for('static', filename='islands/' + island.id|string + '.svg')}}"></img>
   </div>
@@ -12,7 +12,7 @@
     <p class="mb-4">{{ island.location }}</p>
   </div>
 </div>
-<div class="mt-16 grid grid-cols-2 gap-8">
+<div class="mt-16 grid sm:grid-cols-1 md:grid-cols-2 gap-8">
   <div class="shadow-xl p-8">  
     <h2 class="text-3xl font-bold mb-4 mt-8">Offers</h2>
     {% include 'offer-list.j2' %} 

@@ -12,4 +12,4 @@ if __name__ == '__main__':
         rollback()
         migrate()
         seed()
-        app.run(debug=True if os.getenv('APP_ENV') == "Local" else False, host='0.0.0.0')
+        app.run(debug=True if os.getenv('APP_ENV') == "local" else False, host='0.0.0.0')
