@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://github.com/voyage-playground/island-list"><img src="./static/logo.svg" width="200" alt="Logo"></a>
+  <a href="https://github.com/voyage-playground/island-list"><img src="./lib/static/logo.svg" width="400" alt="Logo"></a>
 </p>
 
 <p align="center">
